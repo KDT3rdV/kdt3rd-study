@@ -1,0 +1,37 @@
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: gold;
+    position: relative;
+
+    animation: won 3s linear 6;
+    animation-delay: 3s;
+}
+
+@keyframes won {
+    from {
+        left: 0px;
+        top: 0px;
+    }
+
+    25% {
+        left: 400px;
+        top: 0px;
+    }
+
+    50% {
+        left: 400px;
+        top: 400px;
+    }
+
+    75% {
+        left: 0px;
+        top: 400px;
+    }
+
+    to {
+        left: 0px;
+        top: 0px;
+    }
+}

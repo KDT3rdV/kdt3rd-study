@@ -1,0 +1,17 @@
+#cap {
+    color: green;
+    font-size: 2em;
+    text-align: center;
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+table {
+    width: 50%;
+}

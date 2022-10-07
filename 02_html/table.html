@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+    <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Table 태그</title>
+            <style>
+                th {
+                    background-color: rgb(129, 173, 78);
+                    color: white;
+                    font-size: 25px;
+                }
+                .size {
+                    font-size: 2em;
+                }
+
+                #color {
+                    color: crimson;
+                }
+            </style>
+    </head>
+    <body> 
+ <!-- <thead></thead> -->
+ <!-- <tfoot></tfoot> -->
+        <h1>가격표</h1>   
+        <table border="1" cellspacing="5" cellpadding="10">
+            <tr>
+                <th>메뉴</th>
+                <th>가격</th>
+                <th>비고</th>
+            </tr>
+            <tr>
+                <td>국물떡볶이</td>
+                <td>5000원</td>
+                <td>2인이상 주문가능</td>
+            </tr>
+            <tr>
+                <td>라볶이</td>
+                <td>5000원</td>
+                <td>2인이상 주문가능</td>
+            </tr>
+            <tr>
+                <td>라면&김밥</td>
+                <td>4000원</td>
+                <td>토핑변경 시 가격변동</td>
+            </tr>
+            <tr>
+                <td>토핑가능 목록</td>
+                <td colspan="2">라면: 만두 치즈<p>김밥: 참치 고추</p></td>
+            </tr>
+            <tr>
+                <td colspan="3" text align="center">SNS에 인증사진 올리면 음료 증정 이벤트</td>
+            </tr>
+        </table>
+        <h1>가격표 NEW</h1>   
+        <table border="1" cellspacing="5" cellpadding="10">
+            <tr>
+                <th>메뉴</th>
+                <th>가격</th>
+                <th>비고</th>
+            </tr>
+            <tr>
+                <td>국물떡볶이</td>
+                <td>5000원</td>
+                <td>2인이상 주문가능</td>
+            </tr>
+            <tr>
+                <td>참치김밥</td>
+                <td rowspan="2">4000원</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>치즈김밥</td>
+                <td></td>
+            <tr>
+                <td colspan="3">순대 (품절)</td>
+            </tr>
+        </table>
+        <h1>자리표</h1>
+        <table border="1" cellspacing="0" cellpadding="50" width="100%" style="text-align: center;">
+            <tr>
+                <td colspan="2">1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td rowspan="2" class="size">4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td id="color" class="size">7</td>
+            </tr>
+        </table>
+        <h1>자리표2</h1>
+        <table border="1" width="500" height="500" style="text-align: center;">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td rowspan="2">3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td colspan="2">5</td>
+                <td rowspan="2">6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td colspan="2">8</td>
+            </tr>
+        </table>
+        <!-- width, height속성: %, 숫자로 전체 화면의 차지 비율 설정가능 -->
+        <!-- style속성: 가운데정렬, 폰트크기, 색상 등 -->
+    </body>
+</html>

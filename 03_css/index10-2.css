@@ -1,0 +1,147 @@
+/* transition vs animation
+    - transition: 변화될 '스타일'을 지정
+    - hover, onclick 이벤트에 의해 발생
+
+    - animation: 중간중간 단계를 지정해 '세밀한 스타일 전환' 가능
+    - 하나 이상의 #keyframe으로 이루어짐 */
+
+/* animation 프로퍼티
+    - animation-name: #keyframe에 지정한 애니메이션 이름
+        - 시작: from or 0%
+        - 중간: 0~100%
+        - 끝: to or 100%
+    - animation-duration: 애니메이션 한 사이클이 얼마동안 일어날 것인지(단위: s, ms)
+    - animation-delay: 요소가 그려지고 난 후, 언제 애니메이션을 시작할지(단위: s, ms)
+    - animation-iteration-count: 애니메이션 반복횟수 (default: 1)
+        - 정수로 횟수 지정 or infinite
+    - animation-timing-function: 중간중간 어떤 시간으로 상태를 변화시킬지
+        - linear, ease(defualt), ease-in, ease-out, ease-in-out
+    - animation-direction: 애니메이션이 끝나고 난 후, 반복될 때 진행할 방향 지정
+        - normal, reverse, alternate, alternate-reverse */
+
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: cyan;
+    
+    position: relative;
+    /* animation 연결 */
+    animation-name: moveX;
+    animation-duration: 2s;
+    animation-iteration-count: 15;
+    animation-timing-function: linear;
+    animation-delay: .2s;
+
+}
+
+@keyframes moveX {
+    0% {
+        left: 0px;
+    }
+
+    25% {
+        left: 200px;
+    }
+
+    50% {
+        left: 400px;
+    }
+
+    75% {
+        left: 200px;
+    }
+
+    100% {
+        left: 0px;
+    }
+}
+
+.bounce-ball1 {
+    position: relative;
+    left: 100px;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #0f0;
+
+    /* animation 연결 */
+    /* animation-name: bounce1;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; */
+    /* alternate: 홀수번째는 정방향, 짝수번쨰는 역방향(reverse) */
+
+    /* animation 축약형
+        animation: name duration timing-function delay interation-count direction 순서 */
+    animation: bounce1 1s ease-out infinite alternate;
+
+}
+
+@keyframes bounce1 {
+    /* 시작 */
+    from {
+        top: 300px;
+    }
+
+    /* 끝 */
+    to {
+        top: 50px;
+    }
+}
+
+.bounce-ball2 {
+    width: 50px;
+    height: 50px;
+    background-color: crimson;
+
+    position: fixed;
+    bottom: 0px;
+    border-radius: 50%;
+
+    /* animation: bounce2 1.5s ease-in infinite alternate-reverse; */
+    animation-name: bounce2;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+
+    /* 브라우저 창 기준으로 bottom 에서 튕겨지도록 */
+}
+
+@keyframes bounce2 {
+    from, to {
+        bottom: 0px;
+        animation-timing-function: ease-out;
+        /* 정상속도 -> 천천히 속도 줄임 */
+    }
+
+    50% {
+        bottom: 500px;
+        animation-timing-function: ease-in;
+        /* 천천히 시작 -> 정상속도 */
+    }
+}
+
+.bounce-ball3 {
+    width: 50px;
+    height: 50px;
+    background-color: coral;
+
+    position: fixed;
+    right: 0px;
+    border-radius: 50%;
+
+    animation: bounce3 .5s ease-in infinite reverse;
+
+}
+
+@keyframes bounce3 {
+    from {
+        right: 500px;
+    }
+
+    to {
+        right: 0px;
+    }
+}

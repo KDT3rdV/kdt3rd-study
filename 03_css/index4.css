@@ -1,0 +1,167 @@
+/* 
+단일 선택자
+-전체 * {}
+-태그 태그명 {}
+-클래스 .클래스명 {}
+-아이디 #아이디명 {}
+우선순위 : 아이디 클래스 태그 전체 순
+ */
+
+ /* * {
+    color: navy;
+ }
+
+ li {
+    color: red;
+ }
+
+ .orange {
+    color: rgb(251, 149, 16);
+ }
+
+ div.orange {
+    color: rgb(120, 40, 40);
+ }
+
+#orange {
+    color: blue;
+} */
+
+/* 여러 선택자를 동시에 지정
+    - ,를 이용해 여러 선택자에 동시 스타일 지정 가능
+     */
+
+/* ul,
+p,
+.orange {
+    color: green;
+} */
+
+/* 복합 형제 선택자
+    - 하위 A B
+    - 자식 A>B
+    - 인접형제 A+B
+    - 일반형제 A~B
+    */
+
+/* 하위선택자 */
+body .orange {
+    color: orange
+}
+
+/* 자식선택자 */
+ul > .orange {
+    color: red;
+}
+
+/* 인접 형제 선택자
+    A + B
+    조건1. A, B는 같은 레벨
+    조건2. B가 A의 바로 뒤에 */
+
+ul + .orange {
+    color: green;
+}
+
+/* 조건2에 위배되어 적용X */
+ul + span.orange {
+    color: green;
+}
+
+/* 일반 형제 선택자
+    A ~ B
+    조건1. A, B는 같은 레벨
+    조건2. B는 A보다 뒤에 위치 */
+div.orange ~ span {
+    color: royalblue;
+}
+
+/* 조건2에 위배되어 적용X */
+div.orange ~ ul {
+    color: royalblue;
+}
+
+
+/* 가상선택자 
+    - E:hover: E 요소에 마우스가 올라가 있는 동안 설정한 대로 변화생김
+    - E:active: E 요소를 마우스로 클릭하고 있는 동안 설정한 대로 변화 생김
+    - E:visited: E 요소가 링크일 때, 한번 클릭해서 링크를 접속한 이력이 있을때 설정값으로 변화생김*/
+#google:hover {
+    font-weight: 700;
+    color: orangered;
+}
+
+#naver:active {
+    font-weight: 700;
+    color: palevioletred;
+}
+
+#daum:visited {
+    color: gray;
+}
+
+/* .fruits span:first-child {
+    color: red;
+} */
+
+/* p태그가 .fruits의 첫번째 자식이 아니므로 적용X */
+/* .fruits p:first-child {
+    color: red;
+}
+
+.fruits h3:last-child {
+    color: rgb(21, 123, 106);
+} */
+
+/* 괄호안에 공식을 이용해서 여러개 선택가능 */
+.fruits *:nth-child(2n-1) {
+    color: green;
+}
+
+/* .fruits *:not(span) {
+    color: blue;
+} */
+
+.numbers {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+/* .numbers span:nth-child(odd) {
+    color: green;
+}
+
+.numbers span:nth-child(even) {
+    color: orange;
+} */
+
+
+.numbers span:nth-child(3n+4) {
+    color: blue;
+}
+
+/* CSS우선순위 */
+.test {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.test * {
+    color: gray;
+}
+
+/* 태그선택자 > 전체선택자 */
+/* !important >>>>>>>> 모든CSS (다이김) */
+.test span {
+    color: blue !important;
+}
+
+/* 클래스선택자 > 태그선택자 */
+.test .num {
+    color: green;
+}
+
+/* 아이디선택자 > 클래스선택자 */
+.test #two {
+    color: purple;
+}

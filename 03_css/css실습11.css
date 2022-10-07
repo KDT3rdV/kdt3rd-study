@@ -1,0 +1,18 @@
+p {
+    position: fixed;
+    animation-name: slide;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes slide {
+    from {
+        width: 200%;
+        left: 2000px;
+    }
+
+    to {
+        width: 100%;
+        left: 0px;
+    }
+}
