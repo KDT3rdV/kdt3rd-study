@@ -50,33 +50,30 @@
         // let wr = document.getElementById('writer').value;
         // let ct = document.getElementById('content').value;
 
-        let wrValue = document.getElementById('writer').value;
-        let ctValue = document.getElementById('content').value;
+        let wrValue = document.getElementById("writer").value;
+        let ctValue = document.getElementById("content").value;
         // console.log(wr);
         // console.log(ct);
-        
-        const Table = document.getElementById('table');
-        const newTr = document.createElement('tr');
-        
-        
-        const newTdwr = document.createElement('td');
+
+        const Table = document.getElementById("table");
+        const newTr = document.createElement("tr");
+
+        const newTdwr = document.createElement("td");
         newTdwr.textContent = wrValue;
-        
-        const newTdct = document.createElement('td');
+
+        const newTdct = document.createElement("td");
         newTdct.textContent = ctValue;
 
-        const newTddt = document.createElement('td');
+        const newTddt = document.createElement("td");
         const dt = new Date();
         newTddt.textContent = dt;
 
         Table.append(newTr);
         newTr.append(newTdwr, newTdct, newTddt);
-        
-        
-        document.getElementById('writer').value = '';
-        document.getElementById('content').value = '';
-      };
 
+        document.getElementById("writer").value = "";
+        document.getElementById("content").value = "";
+      }
     </script>
   </body>
 </html>
