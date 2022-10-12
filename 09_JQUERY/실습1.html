@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습1</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      img {
+        width: 300px;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="./image/q.jpg" alt="q" />
+    </div>
+    <button onclick="apple()">사과</button>
+    <button onclick="banana()">바나나</button>
+    <button onclick="grape()">포도</button>
+    <button onclick="peach()">복숭아</button>
+    <script>
+      function apple() {
+        $("img").attr("src", "./image/apple.jpg");
+      }
+
+      function banana() {
+        $("img").attr("src", "./image/bananas.jpg");
+      }
+
+      function grape() {
+        $("img").attr("src", "./image/grapes.jpg");
+      }
+
+      function peach() {
+        $("img").attr("src", "./image/peaches.jpg");
+      }
+    </script>
+  </body>
+</html>
