@@ -1,59 +1,59 @@
 /* common */
 * {
-    box-sizing: border-box;
-    font-size: 40px;
-    font-weight: 700;
-    text-align: center;
+  box-sizing: border-box;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
-    width: 900px;
-    height: 50px;
-    background-color: coral;
+  width: 900px;
+  height: 50px;
+  background-color: coral;
 }
 
 nav {
-    width: 900px;
-    height: 50px;
-    background-color: navy;    
+  width: 900px;
+  height: 50px;
+  background-color: navy;
 }
 
 main {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 aside {
-    width: 150px;
-    height: 480px;
-    background-color: pink;
-    justify-content: flex-start;
+  width: 150px;
+  height: 480px;
+  background-color: pink;
+  justify-content: flex-start;
 }
 
 article {
-    width: 600px;
-    height: 120px;
+  width: 600px;
+  height: 120px;
 }
 
 section *:nth-child(2n-1) {
-    background-color: palegreen;
+  background-color: palegreen;
 }
 
 section {
-    background-color: yellow;
+  background-color: yellow;
 }
 
 footer {
-    width: 900px;
-    height: 50px;
-    background-color: skyblue;
+  width: 900px;
+  height: 50px;
+  background-color: skyblue;
 }
 
 /* TODO: HTMl에 대해 배울 때, semactic tag에 대해 배웠었죠? 
