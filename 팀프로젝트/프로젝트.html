@@ -23,7 +23,7 @@
       .wrap {
         width: 100%;
         margin-top: 16px;
-        background-color: #fff;
+        background-color: rgb(255, 255, 255);
         height: 100%;
         padding: 20px 30px 50px;
         box-sizing: border-box;
@@ -33,6 +33,7 @@
 
       .outer {
         width: 100%;
+        min-width: 500px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -65,9 +66,6 @@
         align-items: center;
         justify-content: center;
         height: 130px;
-      }
-
-      .icon1 {
         font-size: 60px;
         padding-bottom: 30px;
         border-radius: 50%;
@@ -85,7 +83,7 @@
         border-style: solid;
         border-color: black;
         position: relative;
-        width: 100%;
+        width: 80%;
         flex-direction: column;
       }
 
@@ -94,9 +92,6 @@
         padding: 16px 16px 0 16px;
         min-width: 0;
         min-height: 66px;
-      }
-
-      #review {
         display: flex;
         flex: 1 1 auto;
         flex-direction: column;
@@ -110,6 +105,10 @@
       }
 
       /* 별점 관련 */
+      /* .rating {
+        text-align: center;
+      } */
+
       .rating .rate_radio + label {
         position: relative;
         display: inline-block;
@@ -136,18 +135,22 @@
       .list {
         display: flex;
         flex-direction: column;
-        background-color: rgb(187, 122, 122);
+        /* background-color: rgb(238, 255, 170); */
         width: 100%;
-        height: 300px;
+        /* height: 1000px; */
+        margin-bottom: 50px;
       }
 
       /* 개인 리뷰칸 */
       .reviews {
         display: flex;
         flex-direction: row;
-        background-color: limegreen;
         width: 100%;
-        height: 90px;
+        /* height: 10%; */
+        /* padding-top: 10px; */
+        border-style: solid;
+        border-color: black;
+        margin-bottom: 5px;
       }
 
       /* 닉네임칸 */
@@ -155,26 +158,133 @@
         display: flex;
         flex-direction: column;
         flex: 0 0 auto;
-        height: 160px;
-        width: 20%;
-        justify-content: center;
+        /* height: 10%; */
+        width: 30%;
         align-items: center;
-        background-color: aqua;
+        border-style: solid;
+        border-right: medium solid rgb(0, 0, 0);
+        border-bottom: 0;
+        border-top: 0;
+        border-left: 0;
+        /* justify-content: center; */
+      }
+      /* div 위치 확인용 완성후 nickname부터 icon2까지 배경색지우기 */
+      .nickname {
+        /* background-color: bisque; */
+        font-weight: bold;
+      }
+      .textreview {
+        /* background-color: brown; */
+        font-size: 1.5rem;
+        padding-left: 10px;
+      }
+
+      .stars {
+        /* background-color: darkgrey; */
+        width: 100%;
+        padding-left: 10px;
+      }
+      .dates {
+        /* background-color: darkseagreen; */
+        padding-left: 10px;
       }
 
       .icon2 {
         font-size: 30px;
-        padding-bottom: 30px;
-        border-radius: 50%;
+        /* padding-top: 15px; */
+
+        /* background-color: cornflowerblue; */
       }
 
       /* 리뷰,별점,작성일 칸 */
       .right {
-        width: 100%;
-        height: 90px;
+        width: 70%;
+        /* height: 10vw; */
         display: flex;
         flex-direction: column;
-        background-color: fuchsia;
+        justify-content: space-evenly;
+      }
+
+      .side {
+        font-size: 0.8rem;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      @media (max-width: 990px) {
+        .wrap {
+          flex-direction: column;
+        }
+        .comment {
+          flex-direction: column;
+        }
+        .input {
+          flex-direction: column;
+        }
+        .icon {
+          flex-direction: column;
+        }
+        .ni {
+          flex-direction: column;
+          padding-bottom: 30px;
+          align-items: center;
+        }
+        .rabu {
+          flex-direction: column;
+        }
+        .reviews {
+          flex-direction: column;
+        }
+        .nn {
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+        }
+        .icon1 {
+          padding-bottom: 0px;
+        }
+        .rerabu {
+          width: 100%;
+        }
+
+        .rating {
+          text-align: center;
+        }
+
+        .left {
+          flex-direction: row;
+          /* height: 6vw; */
+          border-right: 0;
+        }
+
+        .right {
+          width: 100%;
+          border-right: 0;
+          border-bottom: 0;
+          border-top: medium solid rgb(0, 0, 0);
+          border-left: 0;
+        }
+
+        .stars {
+          width: 30%;
+          padding-left: 30px;
+        }
+
+        .textreview {
+          padding-left: 30px;
+        }
+
+        .dates {
+          padding-left: 50px;
+        }
+
+        .side {
+          display: flex;
+          flex-direction: row;
+        }
       }
 
       @import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap");
@@ -309,25 +419,30 @@
         <hr />
         <div class="input">
           <div class="nn">
-            <div class="icon">
-              <i class="bi bi-person-circle icon1"></i>
-            </div>
+            <i class="bi bi-person-circle icon"></i>
+
             <div class="ni">
               <!-- 닉네임 -->
-              <input type="text" placeholder="nickname" id="nickname" />
+              <input
+                type="text"
+                placeholder="nickname"
+                onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'nickname'"
+                id="nickname"
+              />
             </div>
           </div>
           <div class="rerabu">
             <div class="re">
-              <div>
-                <!-- 리뷰작성 -->
-                <textarea
-                  id="review"
-                  cols="100"
-                  rows="3"
-                  placeholder="write a review"
-                ></textarea>
-              </div>
+              <!-- 리뷰작성 -->
+              <textarea
+                id="review"
+                cols="80"
+                rows="3"
+                placeholder="write a review"
+                onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'write a review'"
+              ></textarea>
             </div>
             <div class="rabu">
               <!-- 별점 -->
@@ -395,13 +510,14 @@
     <div class="list">
       <!-- <div class="reviews">
         <div class="left">
-          <div class="ic"></div>
+          <div class="icon2"></div>
           <div class="nickname"></div>
         </div>
         <div class="right">
           <div class="textreview"></div>
-          <div class="stars"></div>
-          <div class="dates"></div>
+          <div class='side'></div>
+            <div class="stars"></div>
+            <div class="dates"></div>
         </div>
       </div> -->
     </div>
@@ -415,8 +531,9 @@
 
         const list = document.querySelector(".list");
         const reviews = document.querySelector(".reviews");
-        const left = document.querySelector("left");
-        const right = document.querySelector("right");
+        const left = document.querySelector(".left");
+        const right = document.querySelector(".right");
+        const side = document.querySelector(".side");
 
         const date = new Date();
         const year = date.getFullYear();
@@ -434,7 +551,9 @@
         const divLeft = document.createElement("div");
         divLeft.classList.add("left"); // div.left 생성
         const divRight = document.createElement("div");
-        divLeft.classList.add("right"); // div.right 생성
+        divRight.classList.add("right"); // div.right 생성
+        const divSide = document.createElement("div");
+        divSide.classList.add("side"); // div.side 생성
 
         const pericon = document.createElement("div");
         pericon.innerHTML = '<i class="bi bi-person-circle"></i>';
@@ -483,11 +602,13 @@
         list.append(divReviews);
         if (nickname === "" || review === "") {
           perdate.textContent = "";
+          pericon.innerHTML = "";
         } // nickname value와 review value가 없을때 date출력되지 않게끔
         divReviews.append(divLeft, divRight);
 
-        divLeft.append(pernick, pericon);
-        divRight.append(pertxt, perstar, perdate);
+        divLeft.append(pericon, pernick);
+        divRight.append(pertxt, divSide);
+        divSide.append(perstar, perdate);
 
         // document.getElementById("nickname").value = "";
         // document.getElementById("review").value = "";
@@ -511,7 +632,7 @@
           //전체 별점 채색 초기화
           const rateFills = document.querySelectorAll(".ratefill");
           rateFills.forEach(function (item) {
-            item.style.width = parseInt(newrate * 60) + "px";
+            item.style.width = parseInt(newrate * 60) + "px"; //
           });
         }
 
