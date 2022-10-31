@@ -15,8 +15,16 @@ app.use(express.json()); // json형태로 데이터를 전달받음
 //  -res(response): 응답 (서버 -> 클라이언트)
 app.get("/", function (req, res) {
   // GET / (http://localhost:PORT)
-  res.send("root page");
+  //   res.send("root page");
   res.render("index"); // views/index.ejs 파일을 찾아서 클라이언트에게 응답
+});
+
+app.get("/getForm", function (req, res) {
+  res.send("get 요청 응답 성공");
+});
+
+app.get("/postForm", function (req, res) {
+  res.send("post 요청 응답 성공");
 });
 
 app.listen(PORT, function () {
