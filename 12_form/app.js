@@ -37,19 +37,53 @@ app.post("/postForm", function (req, res) {
 });
 
 app.get("/getForm2", function (req, res) {
-  res.send("get2 요청 응답 성공");
+  //   res.send("get2 요청 응답 성공");
   console.log(req.query);
-  res.render("result2", { title: "GET 요청 성공", userInfo: req.query });
+  res.render("result2", { title: "GET2 요청 성공", userInfo: req.query });
 });
 
 app.post("/postForm2", function (req, res) {
-  res.send("post2 요청 응답 성공");
+  //   res.send("post2 요청 응답 성공");
   console.log(req.body);
-  res.render("result2", { title: "POST 요청 성공", userInfo: req.query });
+  res.render("result2", { title: "POST2 요청 성공", userInfo: req.body });
 });
 
 app.post("/postForm3", function (req, res) {
   res.send("post3 요청 응답 성공");
+});
+
+app.get("/practice", function (req, res) {
+  res.render("practice", { title: "실습" });
+});
+
+app.get("/practice1", function (req, res) {
+  res.render("practice1", {
+    title: "실습26. get으로 정보받기",
+    userInfo: req.query,
+  });
+});
+
+app.get("/getPrac", function (req, res) {
+  console.log(req.query);
+  res.render("practiceresult1", {
+    title: "실습26 폼 전송 완료!",
+    userInfo: req.query,
+  });
+});
+
+app.get("/practice2", function (req, res) {
+  res.render("practice2", {
+    title: "실습27. post으로 정보받기",
+    userInfo: req.body,
+  });
+});
+
+app.post("/postPrac", function (req, res) {
+  console.log(req.body);
+  res.render("practiceresult2", {
+    title: "실습27 폼 전송 완료!",
+    userInfo: req.body,
+  });
 });
 
 app.listen(PORT, function () {

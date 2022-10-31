@@ -35,8 +35,8 @@ function call(name) {
       let result = name;
       resolve(result);
       console.log(name);
-    });
-  }, 1000);
+    }, 1000);
+  });
 }
 
 function back() {
@@ -45,8 +45,8 @@ function back() {
       let result = "back";
       console.log(result);
       resolve(result);
-    });
-  }, 1000);
+    }, 1000);
+  });
 }
 
 function hell() {
@@ -54,8 +54,8 @@ function hell() {
     setTimeout(function () {
       let result = "callback hell";
       resolve(result);
-    });
-  }, 1000);
+    }, 1000);
+  });
 }
 
 call("kim")
@@ -64,11 +64,11 @@ call("kim")
     return back(result);
   })
   .then(function (result) {
-    console.log(result, "을 실행했구나!");
+    console.log(result + "을 실행했구나!");
     return hell(result);
   })
   .then(function (result) {
-    console.log("여기는", result);
+    console.log("여기는" + result);
   })
   .catch(function (err) {
     console.log("실패");
