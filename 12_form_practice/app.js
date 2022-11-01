@@ -22,36 +22,6 @@ app.get("/", function (req, res) {
   }); // views/index.ejs 파일을 찾아서 클라이언트에게 "응답"
 });
 
-app.get("/getForm", function (req, res) {
-  // get 요청은 req.query 객체에 폼 정보가 전달
-  console.log(req.query);
-  //   res.send("get 요청 응답 성공");
-  res.render("result", { title: "GET 요청 성공", userInfo: req.query });
-});
-
-app.post("/postForm", function (req, res) {
-  // post 요청은 req.body 객체에 폼 정보가 전달
-  console.log(req.body);
-  //   res.send("post 요청 응답 성공");
-  res.render("result", { title: "POST 요청 성공", userInfo: req.body });
-});
-
-app.get("/getForm2", function (req, res) {
-  //   res.send("get2 요청 응답 성공");
-  console.log(req.query);
-  res.render("result2", { title: "GET2 요청 성공", userInfo: req.query });
-});
-
-app.post("/postForm2", function (req, res) {
-  //   res.send("post2 요청 응답 성공");
-  console.log(req.body);
-  res.render("result2", { title: "POST2 요청 성공", userInfo: req.body });
-});
-
-app.post("/postForm3", function (req, res) {
-  res.send("post3 요청 응답 성공");
-});
-
 app.get("/practice", function (req, res) {
   res.render("practice", { title: "실습" });
 });
