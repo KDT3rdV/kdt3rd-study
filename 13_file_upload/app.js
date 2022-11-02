@@ -24,7 +24,7 @@ const uploadDetail = multer({
 
       console.log(file.originalname); // fruits1.jpg
       console.log(ext); // .jpg
-      console.log(path.basename(file.originalname, ext)); // path.basename
+      console.log(path.basename(file.originalname, ext)); // path.basename('fruits1.jpg', '.jpg') => 'fruits1'
 
       done(null, path.basename(file.originalname, ext) + Date.now() + ext);
       // [파일명+현재시간.확장자] 이름으로 바꿔서 파일 업로드
@@ -70,6 +70,25 @@ app.post("/upload", uploadDetail.single("userfile"), function (req, res) {
 
   res.send("Uploads!");
 });
+
+// 2. array(): 여러 파일을 하나의 input에 업로드할 때
+// array() -> req.files 객체에 파일 정보
+app.post("/upload/array", uploadDetail.array("userfiles"), function (req, res) {
+  console.log(req.files); // [{} {} {} {}]형식으로 파일 정보 확인
+  console.log(req.body); // req.body: title 데이터 정보확인 가능 [Object: null prototype] { title: '과일들...' }
+  res.send("Upload Multiple Each!");
+});
+
+// 3. fields(): 여러 파일을 각각의 input에 업로드 할 때
+app.post(
+  "/upload/fields",
+  uploadDetail.fields([{ name: "userfile1" }, { name: "userfile2" }]),
+  function (req, res) {
+    console.log(req.files); // { userfile1: [{}], userfile2: [{}] }
+    console.log(req.body); // { title1: 'aaa', title2: 'bbb' }
+    res.send("Upload Multiple Each!");
+  }
+);
 
 app.listen(PORT, function () {
   console.log(`http://localhost:${PORT}`);
