@@ -64,9 +64,9 @@
     <form name="register1">
       <h2>실습30. axios post 로그인</h2>
       <label for="ID">아이디</label>
-      <input type="text" id="ID" />
+      <input type="text" id="ID" required />
       <label for="PW">비밀번호</label>
-      <input type="password" id="PW" />
+      <input type="password" id="PW" required />
       <button type="button" onclick="axiosPost()">로그인</button>
       <div class="result30"></div>
     </form>
@@ -76,10 +76,11 @@
       function axiosGet() {
         console.log("###### click axiosGet ######");
 
+        // 폼 선택하기
         const form = document.forms["register"];
+        console.log(form);
         const data = {
           name: form.name.value,
-          gender: form.gender.value,
         };
 
         axios({
@@ -87,12 +88,13 @@
           url: "/practice29",
           params: data,
         }).then(function (response) {
-          console.log(form);
+          // response: 서버로부터 받은 응답
           console.log(response);
-          console.log(response.data);
-          console.log(response.data.name);
-          result29.textContent = `${response.data.name}님 환영합니다~ 가입이 완료되었습니다!`;
-          result29.style.color = "blue";
+          console.log(response.data); // {name: 'aa'}
+          console.log(response.data.name); // aa
+          result29.textContent = `${response.data.name}님 환영합니다~ 가입이 완료되었습니다!👍`;
+          result29.style.color = "blue"; // 이방법도 있고
+          // result29.classList.add('success') class추가해서 위에 style에서 css로 추가하는 방법도 있다.
         });
       }
 
@@ -100,22 +102,35 @@
       function axiosPost() {
         console.log("###### click login ######");
 
+        // 폼 선택하기
         const form = document.forms["register1"];
+        console.log(form);
         const data = {
           ID: form.ID.value,
           PW: form.PW.value,
         };
 
-        axios({
-          method: "POST",
-          url: "/practice30",
-          data: data,
-        }).then(function (response) {
-          console.log(response);
-          console.log(response.data);
-          result30.textContent = response.data.txt;
-          result30.style.color = response.data.color;
-        });
+        if (
+          form.ID.checkValidity() === true &&
+          form.PW.checkValidity() === true
+        ) {
+          axios({
+            method: "POST",
+            url: "/practice30",
+            data: data,
+          }).then(function (response) {
+            console.log(response);
+            console.log(response.data);
+            // res.data
+            // 로그인 성공: {userInfo: req.body, msg: '로그인 성공'}
+            // 로그인 실패: {msg: '로그인 실패'}
+            result30.textContent = response.data.txt;
+            result30.style.color = response.data.color;
+          });
+        } else {
+          result30.textContent = "입력값을 올바르게 채워주세요";
+          result30.style.color = "red";
+        }
       }
     </script>
   </body>

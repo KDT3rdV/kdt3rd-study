@@ -20,31 +20,35 @@ app.get("/", function (req, res) {
   }); // views/dynamic.ejs 파일을 찾아서 클라이언트에게 "응답"
 });
 
-const realId = "banana";
-const realPw = "4321";
-
 app.get("/practice29", function (req, res) {
   console.log(req.query);
   res.send(req.query);
 });
+
+// db에서 가져왔다고 가정
+const realId = "Laird V";
+const realPw = "931119";
 
 app.post("/practice30", function (req, res) {
   console.log(req.body);
   // req.body: 유저가 프론트에서 입력된 아이디/비번
   // 진짜 아이디/비번 변수로 저장되어
   // 유저가 입력한 아이디와 비번을 비교하는 로직
+  // 진짜 아이디/비번 vs 사용자가 입력한 아이디/비번
   if (req.body.ID == realId && req.body.PW == realPw) {
     let content = {
       txt: `${realId}님! 로그인 성공!`,
       color: "blue",
     };
     res.send(content);
+    // res.send ({userInfo: req.body, msg: '로그인 성공'})
   } else {
     let content = {
       txt: "아이디 또는 패스워드 오류",
       color: "red",
     };
     res.send(content);
+    // res.send ({msg: '로그인 실패'})
   }
   // res.send({userInfo: req.body, msg: '오옹'})
   //   res.send(req.body);
