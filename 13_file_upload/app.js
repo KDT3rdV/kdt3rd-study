@@ -39,6 +39,7 @@ app.set("view engine", "ejs");
 app.use("/views", express.static(__dirname + "/views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); //
+app.use("/uploads", express.static(__dirname + "/uploads"));
 
 app.get("/", function (req, res) {
   res.render("index", {
@@ -89,6 +90,13 @@ app.post(
     res.send("Upload Multiple Each!");
   }
 );
+
+app.post("/upload", uploadDetail.single("userfile"), function (req, res) {
+  console.log(req.file);
+  console.log(req.body);
+
+  res.render("result");
+});
 
 app.listen(PORT, function () {
   console.log(`http://localhost:${PORT}`);
