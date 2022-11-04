@@ -91,12 +91,15 @@ app.post(
   }
 );
 
-app.post("/upload", uploadDetail.single("userfile"), function (req, res) {
-  console.log(req.file);
-  console.log(req.body);
-
-  res.render("result");
-});
+// 4. 동적 파일 업로드
+app.post(
+  "/dynamicFile",
+  uploadDetail.single("dynamicFile"),
+  function (req, res) {
+    console.log(req.file);
+    res.send(req.file);
+  }
+);
 
 app.listen(PORT, function () {
   console.log(`http://localhost:${PORT}`);
