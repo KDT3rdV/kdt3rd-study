@@ -84,17 +84,17 @@ DESC user;
 -- 참고) AUTO_INCREMENT 컬럼의 값은 굳이 넣지 않으면 알아서 증가
 -- NULL이라고 넣으면 알아서 숫자가 지정되기도 함
 -- 주의) AUTO_INCREMENT 컬럼은 반드시 PK(기본키, primary key)여야 함
-INSERT INTO user (name,age, address) VALUES('김민정', 20, '서울특별시 마포구');
-INSERT INTO user (name,age, address) VALUES('이지수', 30, '서울특별시 강남구');
-INSERT INTO user (name,age, address) VALUES('최솔이', 22, '대구광역시 동구');
-INSERT INTO user (name,age, address) VALUES('한소희', 25, '부산광역시 관악구');
-INSERT INTO user (name,age, address) VALUES('정세희', 19, '서울특별시 노원구');
-INSERT INTO user (name,age, address) VALUES('이한이', 23, '서울특별시 강서구');
-INSERT INTO user (name,age, address) VALUES('이지은', 32, '부산광역시 동구');
-INSERT INTO user (name,age, address) VALUES('윤세희', 37, '강원도 강릉시');
-INSERT INTO user (name,age, address) VALUES('박수진', 26, '충청남도 공주시');
-INSERT INTO user (name,age, address) VALUES('박찬희', 40, '강원도 속초시');
-INSERT INTO user (name,age, address) VALUES('권희수', 36, '서울특별시 영등포구');
+INSERT INTO user (name, age, address) VALUES('김민정', 20, '서울특별시 마포구');
+INSERT INTO user (name, age, address) VALUES('이지수', 30, '서울특별시 강남구');
+INSERT INTO user (name, age, address) VALUES('최솔이', 22, '대구광역시 동구');
+INSERT INTO user (name, age, address) VALUES('한소희', 25, '부산광역시 관악구');
+INSERT INTO user (name, age, address) VALUES('정세희', 19, '서울특별시 노원구');
+INSERT INTO user (name, age, address) VALUES('이한이', 23, '서울특별시 강서구');
+INSERT INTO user (name, age, address) VALUES('이지은', 32, '부산광역시 동구');
+INSERT INTO user (name, age, address) VALUES('윤세희', 37, '강원도 강릉시');
+INSERT INTO user (name, age, address) VALUES('박수진', 26, '충청남도 공주시');
+INSERT INTO user (name, age, address) VALUES('박찬희', 40, '강원도 속초시');
+INSERT INTO user (name, age, address) VALUES('권희수', 36, '서울특별시 영등포구');
 
 
 
@@ -183,3 +183,11 @@ UPDATE user SET address = '제주특별자치도 제주시', name = '이지현' 
 -- delete에서는 where절이 항상 따라다님
 DELETE FROM user WHERE id = 11;
 DELETE FROM user WHERE id > 8;
+
+-- ==========================================================================
+-- DCL
+-- Data Control Language: 데이터 제어어
+-- 데이터베이스에 접근해 읽거나 쓰는 것을 제한할 수 있는 권한 부여/박탈
+
+-- GRANT: 특정 데이터베이스 사용자에게 특정 작업에 대한 수행 "권한부여"
+-- REVOKE: 특정 데이터베이스 사용자에게 특정 작업에 대한 수행 "권한박탈"
