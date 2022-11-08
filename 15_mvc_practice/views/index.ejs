@@ -74,7 +74,7 @@
           console.log(response.data);
 
           if (response.data.isSuccess) {
-            loginResult.textContent = `${response.data.userInfo.realId}님! 로그인 성공😁`;
+            loginResult.textContent = `${response.data.userInfo.userId}님! 로그인 성공😁`;
             loginResult.classList.remove("error");
             loginResult.classList.add("success");
           } else {

@@ -37,6 +37,7 @@ const comments = [
     comment: "처음와요",
   },
 ];
+// DB와 관계된 정보는 Model 하위 파일로 뺀다!
 
 // 함수 선언
 // 1) 명시적 함수 선언
@@ -84,6 +85,9 @@ app.get("/comment/:id", (req, res) => {
   }
   res.render("comment", { commentInfo: comments[commentId - 1] });
 });
+// app.get 파일경로는 routes의 하위 파일로 옮기면서 router.get으로 변경!
+// req, res 부분은 controller폴더와 연결한 변수연결 후 내부조건은 controller 하위파일에서 취급
+// routes 하위파일은 경로만!
 
 // [404 Error]
 // 맨 마지막 라우트로 선언
