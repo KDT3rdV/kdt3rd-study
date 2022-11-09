@@ -16,6 +16,16 @@ exports.getVisitors = (req, res) => {
   });
 };
 
+exports.getVisitor = (req, res) => {
+  console.log(req.query); // { id: '1' }
+  console.log(req.query.id); // '1'
+
+  Visitor.getVisitor(req.query.id, (result) => {
+    console.log("Cvisitor.js", result);
+    res.send(result);
+  });
+};
+
 exports.postVisitor = (req, res) => {
   console.log(req.body);
 
@@ -25,12 +35,21 @@ exports.postVisitor = (req, res) => {
   });
 };
 
+exports.patchVisitor = (req, res) => {
+  console.log(req.body);
+
+  Visitor.patchVisitor(req.body, (result) => {
+    console.log("Cvisitor.js", result);
+    res.send("수정 성공!!!");
+  });
+};
+
 exports.deleteVisitor = (req, res) => {
   console.log(req.body); // { id: '1' }
   console.log(req.body.id); // 1
 
   Visitor.deleteVisitor(req.body.id, (result) => {
     console.log("Cvisitor.js: ", result);
-    res.send("삭제 성공!!!");
+    res.send("삭제성공");
   });
 };

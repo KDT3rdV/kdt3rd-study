@@ -14,8 +14,14 @@ INSERT INTO visitor (name, comment) VALUES('이찬혁', '으라차차');
 INSERT INTO visitor (name, comment) VALUES('조부희', '알로');
 INSERT INTO visitor (name, comment) VALUES('이수현', '하하하하');
 
+-- 테이블 데이터 삭제 (delete)
+DELETE FROM visitor WHERE id > 2;
 
-SELECT * FROM visitor;
+-- 테이블 데이터 수정 (update)
+UPDATE visitor SET name='누구', comment='아무말' WHERE id=1;
+
+SELECT * FROM visitor; -- all
+SELECT * FROM visitor WHERE id=1; -- one
 
 -- DCL
 -- mysql 사용자 추가 (user 계정)
