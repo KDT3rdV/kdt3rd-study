@@ -3,7 +3,7 @@ const mysql = require("mysql");
 const conn = mysql.createConnection({
   host: "localhost", // ip주소
   user: "user", // mysql접속할때 root로 들어가면 오류남 -> 새로운 계정으로 접속해야함
-  password: "!qngml0172", // DB접속 비밀번호
+  password: "1234", // DB접속 비밀번호
   database: "kdt", // DB이름
 });
 

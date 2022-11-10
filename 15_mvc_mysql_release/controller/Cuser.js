@@ -41,7 +41,7 @@ exports.postProfile = (req, res) => {
   User.postProfile(req.body.userid, (result) => {
     console.log("포스트", result);
     if (result == undefined) {
-      res.redirect("/user/signin");
+      return res.redirect("/user/signin");
     }
     res.render("profile", { data: result });
   });
@@ -57,6 +57,7 @@ exports.editProfile = (req, res) => {
 exports.deleteProfile = (req, res) => {
   console.log("deleteProfile.con", req.body);
   User.deleteProfile(req.body.id, () => {
-    res.redirect("/user/signin");
+    // res.redirect("/user/signin");
+    res.send(req.body);
   });
 };

@@ -25,11 +25,11 @@ SELECT * FROM visitor WHERE id=1; -- one
 
 -- DCL
 -- mysql 사용자 추가 (user 계정)
-CREATE USER 'user'@'%' IDENTIFIED BY '!qngml0172'; 
+CREATE USER 'user'@'%' IDENTIFIED BY '1234'; 
 -- user 계정에 db 권한 부여 (모든 db에 접근 가능 설정)
 GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' WITH GRANT OPTION;
 -- 현재 사용중인 mysql 캐시 지우고 새로운 설정 적용
 FLUSH PRIVILEGES;
 
 -- 비밀번호 변경하고 싶다면?
-ALTER USER 'user'@'%' IDENTIFIED WITH mysql_native_password BY '!qngml0172';
+ALTER USER 'user'@'%' IDENTIFIED WITH mysql_native_password BY '1234';
