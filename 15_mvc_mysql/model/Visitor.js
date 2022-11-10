@@ -2,13 +2,13 @@ const mysql = require("mysql");
 
 const conn = mysql.createConnection({
   host: "localhost", // ip주소
-  user: "user", // mysql접속할때 root로 들어가니까 root 다르게 들어가면 다른것을 하면됨
+  user: "user", // mysql접속할때 root로 들어가면 오류남 -> 새로운 계정으로 접속해야함
   password: "!qngml0172", // DB접속 비밀번호
   database: "kdt", // DB이름
 });
 
 exports.getVisitors = (callback) => {
-  //  begore
+  //  before
   //   return [
   //     { id: 1, name: "홍길동", comment: "내가 왔다" },
   //     { id: 2, name: "이찬혁", comment: "으라차차" },
