@@ -16,6 +16,10 @@ const indexRouter = require("./routes");
 // localhost:PORT/ 경로를 기본으로 ./routes/index.js 파일에 선언한 대로 동작
 app.use("/", indexRouter);
 
+const userRouter = require("./routes/user");
+// localhost:PORT/user 경로를 기본으로 ./routes/user.js 파일에 선언한 대로 동작
+app.use("/user", userRouter);
+
 app.get("*", (req, res) => {
   res.render("404");
 });

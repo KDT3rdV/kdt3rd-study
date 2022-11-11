@@ -23,6 +23,4 @@ router.patch("/visitor/edit", controller.patchVisitor); // 하나수정
 // DELETE /visitor/delete => localhost:PORT/visitor/delete
 router.delete("/visitor/delete", controller.deleteVisitor); // 하나 삭제
 
-// module.exports 를 통해서 router 등록
-// -> 다른 파일에서도 사용 가능
 module.exports = router;
