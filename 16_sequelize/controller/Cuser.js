@@ -31,7 +31,7 @@ exports.postSignin = (req, res) => {
       pw: req.body.pw,
     },
   }).then((result) => {
-    console.log("findAllsign >>", result); // [{}]
+    console.log("findOnesign >>", result); // [{}]
     if (result === null) {
       res.send(false);
     } else {

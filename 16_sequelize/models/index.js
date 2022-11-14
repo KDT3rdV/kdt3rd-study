@@ -63,9 +63,10 @@ db.Sequelize = Sequelize;
 // db = { sequelize: sequelize, Sequelize: Sequelize }
 
 db.Visitor = require("./Visitor")(sequelize, Sequelize);
-db.User = require("./User")(sequelize, Sequelize);
-
 // models/Visitor.js 정의한 model이 db.Visitor에 들어감
+db.User = require("./User")(sequelize, Sequelize);
+// models/User.js 정의한 model이 db.User에 들어감
+
 // db = { sequelize: sequelize, Sequelize: Sequelize, Visitor: model }
 
 module.exports = db;
