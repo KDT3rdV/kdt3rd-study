@@ -1,0 +1,60 @@
+.App {
+  text-align: center;
+}
+
+.test {
+  background-color: rgb(245, 232, 207);
+  font-size: 40px;
+  color: coral;
+  margin: 10px;
+}
+
+.input {
+  margin: 15px;
+}
+
+.rainbow {
+  display: flex;
+}
+
+.red {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+}
+
+.orange {
+  background-color: orange;
+  width: 100px;
+  height: 150px;
+}
+
+.yellow {
+  background-color: yellow;
+  width: 100px;
+  height: 200px;
+}
+
+.green {
+  background-color: green;
+  width: 100px;
+  height: 250px;
+}
+
+.blue {
+  background-color: blue;
+  width: 100px;
+  height: 300px;
+}
+
+.navy {
+  background-color: navy;
+  width: 100px;
+  height: 350px;
+}
+
+.purple {
+  background-color: purple;
+  width: 100px;
+  height: 400px;
+}
