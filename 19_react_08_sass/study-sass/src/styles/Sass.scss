@@ -1,0 +1,84 @@
+@import "./utils.scss";
+// .Sass {
+//   display: flex;
+//   .box {
+//     width: 100px;
+//     height: 100px;
+//     // 임시
+//     border: 1px solid black;
+//   }
+// }
+/////////////////////////////////////////////////////
+// $: 변수 사용 $뒤에 뭐에대한 변수인지 적어주는게 좋음
+// // color변수
+// $color-red: red;
+// $color-orange: orange;
+// $color-yellow: yellow;
+// $color-green: green;
+// $color-blue: blue;
+// $color-indigo: indigo;
+// $color-purple: purple;
+// // size변수
+// $box-size: 150px;
+// // animation 변수
+// $animation-duration: 0.4s;
+// -> utils.scss로 옮김
+// develop
+.Sass {
+  display: flex;
+
+  .box {
+    // width: $box-size;
+    // height: $box-size;
+    @include box(120px, 100px);
+
+    // 중첩 안에서 &: 부모 선택자 참조하여 치환
+    &.red {
+      // .box.red
+      background-color: $color-red;
+    }
+
+    &.orange {
+      // .box .orange
+      background-color: $color-orange;
+    }
+
+    &.yellow {
+      // .box .yellow
+      background-color: $color-yellow;
+    }
+
+    &.green {
+      // .box .green
+      background-color: $color-green;
+    }
+
+    &.blue {
+      // .box .blue
+      background-color: $color-blue;
+    }
+
+    &.indigo {
+      // .box .indigo
+      background-color: $color-indigo;
+    }
+
+    &.purple {
+      // .box .purple
+      background-color: $color-purple;
+    }
+
+    &:hover {
+      $this-animation: $animation-duration * 2; // 변수할당, 변수 연산 가능
+      cursor: pointer;
+      transform: translateY(-50px);
+      transition: transform $this-animation * 2;
+    }
+  }
+}
+
+@media (max-width: #{$breakpoint-md}) {
+  .Sass {
+    flex-direction: column-reverse;
+  }
+}

@@ -1,0 +1,35 @@
+// color변수
+$color-red: red;
+$color-orange: orange;
+$color-yellow: yellow;
+$color-green: green;
+$color-blue: blue;
+$color-indigo: indigo;
+$color-purple: purple;
+$color-black: black;
+$color-pink: pink;
+$color-white: white;
+$color-postblue: rgb(119, 164, 255);
+$color-postgray: rgb(123, 123, 123);
+$color-postlightblue: rgb(243, 247, 255);
+$color-shadowblack: rgba(0, 0, 0, 0.15);
+
+// size변수
+$box-size: 150px;
+
+// animation 변수
+$animation-duration: 0.4s;
+
+// Breakpoint
+$breakpoint-md: 768px;
+
+@mixin box($w, $h) {
+  width: $w;
+  height: $h;
+  border: 2px solid $color-black;
+}
+
+@mixin animation($s, $c) {
+  animation-duration: $s;
+  animation-iteration-count: $c;
+}
