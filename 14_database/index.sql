@@ -107,6 +107,52 @@ SELECT name FROM user; -- 이름 컬럼만 조회
 SELECT age, name FROM user; -- 나이, 이름 컬럼 조회
 SELECT id, address FROM user; -- id, 주소 컬럼 조회
 
+-- date_format(dateof_birth, '%Y-%m-%d') as dateof_birth
+-- 날짜형식 고정시키는 쿼리문
+-- DATE_FORMAT(속성명, '%Y-%m-%d') as 속성명
+-- '%Y-%m-%d' => 2022-12-28 로 출력
+-- '%Y-%M-%D' => 2022-DEC-28th로 출력
+
+-- 집계함수 : COUNT(개수), SUM(총합), AVG(평균), GROUP BY(묶음)
+
+-- 쿼리문 조건을 충족하는 DATA가 몇개인지 출력하는 방법
+-- COUNT(USER_ID) AS USERS
+-- SELECT와 FROM 사이에 COUNT(속성명) AS 출력하고싶은 속성별명을 써준다
+
+-- GROUP BY를 사용할 때는 두가지를 기억해야 합니다.
+-- 특정 컬럼을 그룹화 하는 GROUP BY 
+-- 특정 컬럼을 그룹화한 결과에 조건을 거는 HAVING
+-- 헷갈리지말자! => WHERE는 그룹화 하기 전, HAVING은 그룹화 후
+-- 사용법
+-- SELECT 컬럼 FROM 테이블 [WHERE 조건식]
+-- GROUP BY 그룹화할 컬럼 [HAVING 조건식] ORDER BY 컬럼1 [, 컬럼2, 컬럼3 ...];
+
+-- DISTINCT: 중복된 것 제외 시키는 쿼리문
+-- ex) SELECT DISTINCT 컬럼 FROM 테이블;
+
+-- ROUND(숫자,반올림할 자릿수) - 숫자를 반올림할 자릿수 +1 자릿수에서 반올림
+-- 예시
+SELECT ROUND(3456.1234567) FROM DUAL; -- 3456
+ 
+SELECT ROUND(3456.1234567 ,1) FROM DUAL; -- 3456.1
+ 
+SELECT ROUND(3456.1234567 ,4) FROM DUAL; -- 3456.1235
+ 
+SELECT ROUND(3456.1234567 ,-1) FROM DUAL; -- 3460
+ 
+SELECT ROUND(3456.1234567 ,-2) FROM DUAL; -- 3500
+
+-- TRUNCATE(숫자,버릴 자릿수) - 숫자를 버릴 자릿수 아래로 버림
+-- ※ 반드시 버릴 자릿수를 명시해 주어야 함 
+-- 예시
+SELECT TRUNCATE(3456.1234567 ,1) FROM DUAL; -- 3456.1
+ 
+SELECT TRUNCATE(3456.1234567 ,4) FROM DUAL; -- 3456.1234
+ 
+SELECT TRUNCATE(3456.1234567 ,-1) FROM DUAL; -- 3450
+ 
+SELECT TRUNCATE(3456.1234567 ,-2) FROM DUAL; -- 3400 
+
 
 -- WHERE절: 특정 조건을 만족하는 행(record, tuple) 선택
 SELECT * FROM user WHERE age >= 25; -- 나이가 25 이상인사람 조회
